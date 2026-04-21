@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- Страница «Туры» — описание туров и таблица сравнения -->
+<html lang="ru">
+<head>
+    <!-- Кодировка -->
+    <meta charset="UTF-8">
+    <!-- Метатег viewport — обязательный для адаптивности -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO-описание -->
+    <meta name="description" content="Актуальные туры SkyWay Travel: Мальдивы, Япония, Швейцария, Дубай, Бали.">
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- Скрипт -->
+    <script src="../js/script.js" defer></script>
+    <title>Туры — SkyWay</title>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <a class="logo" href="../index.html">✈ SkyWay</a>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="../pages/about.html">О нас</a>
+            <a href="../pages/destinations.html">Направления</a>
+            <a href="../pages/tours.html" class="active">Туры</a>
+            <a href="../pages/contacts.html">Контакты</a>
+        </nav>
+        <!-- Мобильное меню — JS: mobileMenu() -->
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars" aria-label="Меню"></i>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="centered">Актуальные туры</h1>
+
+            <!-- Подзаголовок -->
+            <p style="text-align:center; text-indent:0; color:#555; margin-bottom:32px; font-style:italic;">
+                Готовые пакетные туры с вылетом из Кишинёва и Бухареста
+            </p>
+
+            <!-- ===== ТУР 1: МАЛЬДИВЫ ===== -->
+            <!-- .tour-item получает класс visible через JS IntersectionObserver -->
+            <div class="tour-item">
+                <!-- Изображение с обязательным alt-атрибутом -->
+                <img src="../images/maldivi.jpg"
+                     alt="Мальдивы — бунгало над водой">
+                <h2>Мальдивы — 10 ночей</h2>
+                <p>
+                    Пакетный тур для двоих: перелёт, трансфер, проживание в 5★ бунгало над водой,
+                    завтраки и ужины. Отдых пройдёт в атолле Ари — одном из живописных мест
+                    Индийского океана. Программа включает дайвинг, сноркелинг и морскую прогулку на закате.
+                </p>
+                <!-- CSS градиент применён к .tour-price -->
+                <span class="tour-price">от 2 800 € / чел.</span>
+            </div>
+
+            <!-- ===== ТУР 2: ЯПОНИЯ ===== -->
+            <div class="tour-item">
+                <img src="../images/iaponia.jpg"
+                     alt="Япония — Токио ночью">
+                <h2>Япония — 8 ночей</h2>
+                <p>
+                    Маршрут Токио → Никко → Киото → Осака. Перелёт, проживание в японских рёканах
+                    и отелях, завтраки. В программе: чайная церемония, прогулка по бамбуковому лесу
+                    Арасияма, посещение Фусими Инари. Тур проводится с русскоязычным гидом.
+                </p>
+                <span class="tour-price">от 3 200 € / чел.</span>
+            </div>
+
+            <!-- ===== ТУР 3: ШВЕЙЦАРИЯ ===== -->
+            <div class="tour-item">
+                <img src="../images/alipa.jpg"
+                     alt="Швейцарские Альпы — горная панорама">
+                <h2>Швейцарские Альпы — 7 ночей</h2>
+                <p>
+                    Цюрих, Люцерн, Интерлакен, гора Юнгфрау. Перелёт, проживание в 4★ отелях,
+                    завтраки, Swiss Travel Pass. Панорамные поезда, горные фуникулёры,
+                    прогулки по берегу Боденского озера. Подходит для летнего и зимнего отдыха.
+                </p>
+                <span class="tour-price">от 2 100 € / чел.</span>
+            </div>
+
+            <!-- ===== ТУР 4: БАЛИ ===== -->
+            <div class="tour-item">
+                <img src="../images/bali.jpg"
+                     alt="Бали — рисовые террасы Убуда">
+                <h2>Бали — 12 ночей</h2>
+                <p>
+                    Убуд + Семиньяк + Нуса-Пенида. Перелёт, трансфер, проживание, завтраки.
+                    Рисовые террасы, храм на скале Улувату, водопады и сёрфинг на лучших пляжах.
+                    Спа-процедуры и традиционный балийский массаж включены.
+                </p>
+                <span class="tour-price">от 1 950 € / чел.</span>
+            </div>
+
+            <!-- ===== ТУР 5: ДУБАЙ ===== -->
+            <div class="tour-item">
+                <img src="../images/dubai.jpg"
+                     alt="Дубай — Бурдж-Халифа">
+                <h2>Дубай + Абу-Даби — 6 ночей</h2>
+                <p>
+                    Перелёт, трансфер, проживание в 5★ отеле, завтраки + ужины.
+                    Сафари в пустыне, посещение Бурдж-Халифа и Лувра Абу-Даби.
+                    Шопинг в Mall of the Emirates и Dubai Mall.
+                </p>
+                <span class="tour-price">от 1 600 € / чел.</span>
+            </div>
+
+            <!-- Инфоблок о бронировании -->
+            <div class="info-block">
+                <h2>Как забронировать тур?</h2>
+                <p>Процесс бронирования прост и удобен:</p>
+                <ul class="info-list">
+                    <li>Выберите тур и свяжитесь с нами по телефону или email</li>
+                    <li>Наш менеджер уточнит детали и пожелания</li>
+                    <li>Вы получаете подробный план поездки и счёт</li>
+                    <li>После оплаты — все документы и инструкции на email</li>
+                    <li>Отдыхайте! Мы на связи 24/7 во время поездки</li>
+                </ul>
+                <!-- Иконка Iconify -->
+                <p class="iconite-line">
+                    <iconify-icon icon="mdi:calendar-check" width="22" height="22"></iconify-icon>
+                    Раннее бронирование — скидка до 15%.
+                </p>
+            </div>
+
+            <!-- ===== ТАБЛИЦА СРАВНЕНИЯ ТУРОВ ===== -->
+            <h2 class="centered" style="margin-top:36px;">Сравнение популярных туров</h2>
+
+            <!-- Обёртка с overflow-x для горизонтальной прокрутки на мобильных -->
+            <div class="table-wrap">
+                <!-- <table> с классом tour-table — семантическая таблица данных -->
+                <table class="tour-table">
+                    <!-- Заголовок таблицы -->
+                    <thead>
+                        <tr>
+                            <th>Направление</th>
+                            <th>Длительность</th>
+                            <th>Формат</th>
+                            <th>Питание</th>
+                            <th>Цена от (EUR)</th>
+                        </tr>
+                    </thead>
+                    <!-- Тело таблицы -->
+                    <tbody>
+                        <tr>
+                            <td>Мальдивы</td>
+                            <td>10 ночей</td>
+                            <td>Пляжный отдых</td>
+                            <td>Завтраки + ужины</td>
+                            <td>2 800</td>
+                        </tr>
+                        <tr>
+                            <td>Япония</td>
+                            <td>8 ночей</td>
+                            <td>Культурный тур</td>
+                            <td>Завтраки</td>
+                            <td>3 200</td>
+                        </tr>
+                        <tr>
+                            <td>Швейцария</td>
+                            <td>7 ночей</td>
+                            <td>Активный отдых</td>
+                            <td>Завтраки</td>
+                            <td>2 100</td>
+                        </tr>
+                        <tr>
+                            <td>Бали</td>
+                            <td>12 ночей</td>
+                            <td>Пляж + релакс</td>
+                            <td>Завтраки</td>
+                            <td>1 950</td>
+                        </tr>
+                        <tr>
+                            <td>Дубай + Абу-Даби</td>
+                            <td>6 ночей</td>
+                            <td>Сити + люкс</td>
+                            <td>Завтраки + ужины</td>
+                            <td>1 600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Внешняя ссылка -->
+            <p style="text-indent:0; margin-top:20px;">
+                Сравните предложения на 
+                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer"
+                   style="color:var(--accent); font-weight:600;">
+                    Skyscanner <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:12px;"></i>
+                </a>
+            </p>
+
+            <!-- Якорная ссылка наверх -->
+            <a href="#" style="color:var(--navy); font-weight:600;">↑ Вернуться к началу</a>
+
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <span>© SkyWay Travel — <span id="footer-year">2026</span></span>
+        &nbsp;|&nbsp;
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a>
+    </footer>
+
+    <!-- Кнопка «Наверх» -->
+    <div id="back-top" title="Наверх">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+</body>
+</html>

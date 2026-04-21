@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Страница «О нас» — история компании, аудио и видео -->
+<html lang="ru">
+<head>
+    <!-- Кодировка документа -->
+    <meta charset="UTF-8">
+    <!-- Метатег для адаптивности на всех устройствах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO-описание -->
+    <meta name="description" content="О компании SkyWay Travel — история, ценности и команда.">
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- Основной скрипт -->
+    <script src="../js/script.js" defer></script>
+    <title>О нас — SkyWay</title>
+</head>
+<body>
+
+    <!-- Шапка: одинакова на всех страницах -->
+    <header>
+        <a class="logo" href="../index.html">✈ SkyWay</a>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="../pages/about.html" class="active">О нас</a>
+            <a href="../pages/destinations.html">Направления</a>
+            <a href="../pages/tours.html">Туры</a>
+            <a href="../pages/contacts.html">Контакты</a>
+        </nav>
+        <!-- Гамбургер — вызывает функцию mobileMenu() из script.js -->
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars" aria-label="Меню"></i>
+    </header>
+
+    <main>
+        <section>
+            <!-- Заголовок страницы -->
+            <h1 class="centered">О компании</h1>
+
+            <!-- Блок-карточка с общей информацией -->
+            <div class="page-hero">
+                <h2>SkyWay Travel — ваш надёжный партнёр</h2>
+                <p>
+                    Мы — команда профессионалов с более чем 10-летним опытом в сфере туризма.
+                    Наша миссия — создавать незабываемые путешествия, которые вдохновляют
+                    и остаются в памяти на всю жизнь. Каждый маршрут мы составляем с душой,
+                    учитывая пожелания каждого клиента.
+                </p>
+            </div>
+
+            <!-- Текстовые абзацы -->
+            <p>
+                Компания SkyWay Travel была основана в 2014 году группой энтузиастов,
+                влюблённых в путешествия. За эти годы мы помогли тысячам людей открыть
+                новые страны, культуры и впечатления. Мы работаем с ведущими авиакомпаниями
+                и отелями, чтобы предложить лучшие условия по оптимальным ценам.
+            </p>
+            <p>
+                Наш офис находится в Кишинёве, но география наших туров охватывает весь мир —
+                от тёплых пляжей Мальдив до заснеженных вершин Альп, от древних храмов Азии
+                до живописных фьордов Скандинавии. Мы организуем как групповые, так и
+                индивидуальные туры, семейный отдых и деловые поездки.
+            </p>
+
+            <!-- Список преимуществ -->
+            <h2>Почему выбирают нас</h2>
+            <ul class="info-list">
+                <li>Более 10 лет опыта в организации международных туров</li>
+                <li>Индивидуальный подход к каждому клиенту</li>
+                <li>Круглосуточная поддержка во время поездки</li>
+                <li>Более 50 направлений по всему миру</li>
+                <li>Сотрудничество с лучшими отелями и авиакомпаниями</li>
+                <li>Гибкие условия оплаты и специальные предложения</li>
+            </ul>
+
+            <!-- Блок ценностей -->
+            <div class="info-block" style="margin-top:30px;">
+                <h2>Наши ценности</h2>
+                <p>
+                    Мы верим, что путешествия меняют людей к лучшему. Каждая поездка — это
+                    новый взгляд на мир, новые знакомства, новые открытия. Именно поэтому
+                    мы вкладываем в каждый тур не только профессионализм, но и искреннюю
+                    любовь к своему делу.
+                </p>
+                <p>
+                    Безопасность, комфорт и яркие впечатления — три главных принципа SkyWay.
+                </p>
+                <!-- Иконка Iconify -->
+                <p class="iconite-line">
+                    <iconify-icon icon="mdi:heart" width="20" height="20"></iconify-icon>
+                    Нам важно, чтобы каждое путешествие было комфортным и вдохновляющим.
+                </p>
+            </div>
+
+            <!-- ===== АУДИО-ЭЛЕМЕНТ ===== -->
+            <!-- Элемент <audio> с атрибутом controls — встроенный плеер браузера -->
+            <div class="audio-block">
+                <h2>🎵 Аудио-приветствие</h2>
+                <p>Короткое музыкальное сопровождение о философии путешествий.</p>
+                <!-- <audio> — встроенный медиаэлемент HTML5 -->
+                <audio controls>
+                    <!-- Источник аудио-файла -->
+                    <source src="../audio/raslabon.mp3" type="audio/mpeg">
+                    <!-- Текст для браузеров без поддержки audio -->
+                    Ваш браузер не поддерживает воспроизведение аудио.
+                </audio>
+            </div>
+
+            <!-- ===== ВИДЕО-ЭЛЕМЕНТ ===== -->
+            <!-- Элемент <video> — требование задания -->
+            <div class="video-block" style="margin-top:30px;">
+                <h2 style="padding:16px 16px 8px; background:#f0f4ff; margin:0;">🎬 Вдохновляющее видео</h2>
+                <!-- <video> с атрибутами управления воспроизведением -->
+                <video controls poster="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=900&q=60">
+                    <!-- Видео с Pixabay (лицензия CC0 — свободное использование) -->
+                    <source src="../video/puti.mp4" type="video/mp4">
+                    <!-- Запасной текст если браузер не поддерживает <video> -->
+                    Ваш браузер не поддерживает воспроизведение видео.
+                </video>
+            </div>
+
+            <!-- YouTube через iframe (дополнительно) -->
+            <br>
+            <iframe class="vframe"
+                src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                title="Travel inspiration video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+
+            <!-- Внутренние якорные ссылки -->
+            <div style="margin-top:28px;">
+                <a href="#" style="color:var(--navy); font-weight:600;">↑ Вернуться к началу страницы</a>
+                &nbsp;|&nbsp;
+                <a href="../pages/tours.html" style="color:var(--accent); font-weight:600;">Посмотреть наши туры →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <span>© SkyWay Travel — <span id="footer-year">2026</span></span>
+        &nbsp;|&nbsp;
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a>
+    </footer>
+
+    <!-- Кнопка «Наверх» -->
+    <div id="back-top" title="Наверх">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+</body>
+</html>

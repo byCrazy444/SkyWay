@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- Страница «Направления» — карточки с фильтрацией через JS -->
+<html lang="ru">
+<head>
+    <!-- Кодировка -->
+    <meta charset="UTF-8">
+    <!-- Метатег viewport — адаптивность на мобильных -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description" content="Популярные туристические направления SkyWay: пляжный отдых, культурные туры, активный отдых и многое другое.">
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- Скрипт: фильтрация карточек реализована в script.js -->
+    <script src="../js/script.js" defer></script>
+    <title>Направления — SkyWay</title>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <a class="logo" href="../index.html">✈ SkyWay</a>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="../pages/about.html">О нас</a>
+            <a href="../pages/destinations.html" class="active">Направления</a>
+            <a href="../pages/tours.html">Туры</a>
+            <a href="../pages/contacts.html">Контакты</a>
+        </nav>
+        <!-- Мобильное меню — вызов mobileMenu() из script.js -->
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars" aria-label="Меню"></i>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="centered">Направления</h1>
+
+            <!-- Информационный блок-герой -->
+            <div class="page-hero">
+                <h2>Куда полететь в 2026 году?</h2>
+                <p>
+                    Мы подобрали самые востребованные и красивые направления для вашего отдыха.
+                    Пляжный релакс, активные приключения, культурные туры — выбирайте своё!
+                    Используйте фильтр, чтобы найти идеальный вариант.
+                </p>
+            </div>
+
+            <!-- ===== ФИЛЬТР КАРТОЧЕК (JS-интерактивность) ===== -->
+            <!-- Кнопки фильтра: при клике JS показывает/скрывает карточки с нужным data-tag -->
+            <div class="filter-bar" id="filter-bar">
+                <!-- data-filter="all" — показать все карточки -->
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="beach">🏖 Пляжный</button>
+                <button class="filter-btn" data-filter="culture">🏛 Культурный</button>
+                <button class="filter-btn" data-filter="active">⛷ Активный</button>
+                <button class="filter-btn" data-filter="city">🏙 Сити-брейк</button>
+                <button class="filter-btn" data-filter="luxury">💎 Люкс</button>
+            </div>
+
+            <!-- Сетка карточек направлений -->
+            <!-- data-tag — метка для JS-фильтра -->
+            <div class="dest-grid">
+
+                <!-- Карточка 1: Мальдивы -->
+                <div class="dest-card" data-tag="beach">
+                    <!-- alt — обязательный атрибут для изображений -->
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?w=600&q=80"
+                         alt="Мальдивы — кристальные воды и белые пляжи">
+                    <div class="dest-card-body">
+                        <h3>Мальдивы</h3>
+                        <p>Кристально чистые воды, белоснежные пляжи и роскошные бунгало над океаном — идеальный медовый месяц.</p>
+                        <span class="dest-tag">Пляжный отдых</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: Япония -->
+                <div class="dest-card" data-tag="culture">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?w=600&q=80"
+                         alt="Япония — Токио и сакура">
+                    <div class="dest-card-body">
+                        <h3>Япония</h3>
+                        <p>Токио, Киото, Осака — погрузитесь в уникальную культуру страны восходящего солнца и цветущие сакуры.</p>
+                        <span class="dest-tag">Культурный тур</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Швейцария -->
+                <div class="dest-card" data-tag="active">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80"
+                         alt="Швейцария — Альпийские горы">
+                    <div class="dest-card-body">
+                        <h3>Швейцария</h3>
+                        <p>Альпийские вершины, живописные озёра, шоколад и часы. Зимой — горнолыжные курорты, летом — треккинг.</p>
+                        <span class="dest-tag">Активный отдых</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Барселона -->
+                <div class="dest-card" data-tag="city">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=600&q=80"
+                         alt="Барселона — Гауди и пляжи">
+                    <div class="dest-card-body">
+                        <h3>Барселона</h3>
+                        <p>Гауди, тапас, Камп Ноу и пляжи Средиземноморья. Город, который никогда не спит и всегда удивляет.</p>
+                        <span class="dest-tag">Сити-брейк</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Дубай -->
+                <div class="dest-card" data-tag="luxury">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80"
+                         alt="Дубай — небоскрёбы и пустыня">
+                    <div class="dest-card-body">
+                        <h3>Дубай</h3>
+                        <p>Небоскрёбы, роскошные торговые центры, пустынные сафари и пляжи Персидского залива — всё в одном городе.</p>
+                        <span class="dest-tag">Люкс</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Рим -->
+                <div class="dest-card" data-tag="culture">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80"
+                         alt="Рим — Колизей и Ватикан">
+                    <div class="dest-card-body">
+                        <h3>Рим</h3>
+                        <p>Колизей, Ватикан, фонтан Треви и лучшая в мире паста. Вечный город влюбляет в себя раз и навсегда.</p>
+                        <span class="dest-tag">Исторический тур</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 7: Бали -->
+                <div class="dest-card" data-tag="beach">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80"
+                         alt="Бали — рисовые террасы и пляжи">
+                    <div class="dest-card-body">
+                        <h3>Бали</h3>
+                        <p>Рисовые террасы, храм на скале Улувату, водопады и сёрфинг на лучших пляжах острова. Спа и массаж включены.</p>
+                        <span class="dest-tag">Пляжный отдых</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 8: Париж -->
+                <div class="dest-card" data-tag="city">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+                         alt="Париж — Эйфелева башня">
+                    <div class="dest-card-body">
+                        <h3>Париж</h3>
+                        <p>Эйфелева башня, Лувр, круассаны и Монмартр. Город любви ждёт вас.</p>
+                        <span class="dest-tag">Сити-брейк</span>
+                    </div>
+                </div>
+
+                <!-- Карточка 9: Норвегия -->
+                <div class="dest-card" data-tag="active">
+                    <img class="dest-card-img"
+                         src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80"
+                         alt="Норвегия — фьорды и северное сияние">
+                    <div class="dest-card-body">
+                        <h3>Норвегия</h3>
+                        <p>Живописные фьорды, северное сияние и треккинг в национальных парках. Незабываемая природа Скандинавии.</p>
+                        <span class="dest-tag">Активный отдых</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- конец dest-grid -->
+
+            <!-- Инфоблок с дополнительными предложениями -->
+            <div class="info-block">
+                <h2>Хотите что-то особенное?</h2>
+                <p>
+                    Это лишь часть наших направлений. Мы организуем туры в более чем 50 стран мира.
+                    Если вы мечтаете о путешествии в особенное место — свяжитесь с нами, и мы разработаем
+                    маршрут специально для вас.
+                </p>
+                <ul class="info-list">
+                    <li>Индивидуальные маршруты по вашим пожеланиям</li>
+                    <li>Групповые туры с опытным гидом</li>
+                    <li>Семейные программы с детьми</li>
+                    <li>Свадебные путешествия и медовый месяц</li>
+                </ul>
+                <!-- Иконка Iconify -->
+                <p class="iconite-line">
+                    <iconify-icon icon="mdi:earth" width="22" height="22"></iconify-icon>
+                    Мы работаем с авиакомпаниями по всему миру.
+                </p>
+            </div>
+
+            <!-- Внешняя ссылка на туристический ресурс -->
+            <p style="text-indent:0; margin-top:20px;">
+                Подробнее об отелях: 
+                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" style="color:var(--accent); font-weight:600;">
+                    Booking.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:12px;"></i>
+                </a>
+            </p>
+
+            <!-- Якорная ссылка наверх -->
+            <a href="#" style="color:var(--navy); font-weight:600;">↑ Вернуться к началу</a>
+
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <span>© SkyWay Travel — <span id="footer-year">2026</span></span>
+        &nbsp;|&nbsp;
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a>
+    </footer>
+
+    <!-- Кнопка «Наверх» — управляется JS -->
+    <div id="back-top" title="Наверх">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+</body>
+</html>

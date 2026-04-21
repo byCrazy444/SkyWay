@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- Страница «Контакты» — форма с 4+ полями ввода, валидация через JS, EmailJS -->
+<html lang="ru">
+<head>
+    <!-- Кодировка -->
+    <meta charset="UTF-8">
+    <!-- Метатег viewport — адаптивность на мобильных устройствах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO-описание страницы -->
+    <meta name="description" content="Контакты туристического агентства SkyWay Travel. Свяжитесь с нами по телефону, email или заполните форму.">
+    <!-- Стили -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- Скрипт: валидация формы -->
+    <script src="../js/script.js" defer></script>
+    <title>Контакты — SkyWay</title>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <a class="logo" href="../index.html">✈ SkyWay</a>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="../pages/about.html">О нас</a>
+            <a href="../pages/destinations.html">Направления</a>
+            <a href="../pages/tours.html">Туры</a>
+            <a href="../pages/contacts.html" class="active">Контакты</a>
+        </nav>
+        <!-- Мобильное меню — вызывает mobileMenu() из script.js -->
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars" aria-label="Меню"></i>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="centered">Контакты</h1>
+
+            <!-- Сетка: контактная информация + форма -->
+            <div class="contact-row">
+
+                <!-- ===== ЛЕВЫЙ БЛОК: КОНТАКТНАЯ ИНФОРМАЦИЯ ===== -->
+                <div class="contacte">
+                    <h2 class="centered">Свяжитесь с нами</h2>
+
+                    <!-- Каждая строка контакта — с иконкой Font Awesome -->
+                    <div class="contact-line">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <b>Телефон:</b><br>
+                            <a href="tel:+37322123456">+373 22 123 456</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <b>Email:</b><br>
+                            <a href="mailto:info@skyway.md">info@skyway.md</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <div>
+                            <b>Туры и бронирование:</b><br>
+                            <a href="mailto:tours@skyway.md">tours@skyway.md</a>
+                        </div>
+                    </div>
+
+                    <!-- Внешняя ссылка на WhatsApp -->
+                    <div class="contact-line">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <b>WhatsApp:</b><br>
+                            <a href="https://wa.me/37360123456" target="_blank" rel="noopener noreferrer">+373 60 123 456</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <b>Адрес:</b><br>
+                            ул. Штефан чел Маре, 123, Кишинёв
+                        </div>
+                    </div>
+
+                    <div class="contact-line">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <b>Режим работы:</b><br>
+                            Пн–Пт: 9:00–18:00 | Сб: 10:00–14:00
+                        </div>
+                    </div>
+
+                    <!-- Иконка Iconify -->
+                    <p class="iconite-line" style="margin-top:18px;">
+                        <iconify-icon icon="mdi:map-marker-radius" width="22" height="22"></iconify-icon>
+                        Мы находимся в центре Кишинёва.
+                    </p>
+                </div>
+
+                <!-- ===== ПРАВЫЙ БЛОК: ФОРМА ОБРАТНОЙ СВЯЗИ ===== -->
+                <!--
+                    Форма содержит 5 различных полей ввода:
+                    1. text (имя)
+                    2. email
+                    3. select (направление)
+                    4. tel (телефон)
+                    5. textarea (сообщение)
+                    Обработка и валидация — в script.js
+                    Отправка письма — через EmailJS на dimamelnic99@gmail.com
+                -->
+                <!-- FormSubmit: action отправляет данные на dimamelnic99@gmail.com без серверной части -->
+                <form class="cform" id="contact-form" onsubmit="submitForm(event)" method="POST" action="https://formsubmit.co/dimamelnic99@gmail.com" novalidate aria-label="Форма обратной связи">
+                    <h2 class="centered">Задать вопрос</h2>
+
+                    <!-- FormSubmit скрытые поля настройки -->
+                    <!-- Отключаем captcha FormSubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Тема письма -->
+                    <input type="hidden" name="_subject" value="Новый запрос с сайта SkyWay Travel">
+                    <!-- После отправки остаёмся на странице (ajax-режим не нужен, редирект на ту же страницу) -->
+                    <!-- Шаблон письма — табличный -->
+                    <input type="hidden" name="_template" value="table">
+
+                    <!-- Блок для динамических сообщений формы (генерируется JS) -->
+                    <div class="form-msg" id="form-message"></div>
+
+                    <!-- Поле 1: Имя (тип text) -->
+                    <label for="f-name">Ваше имя *</label>
+                    <input type="text" id="f-name" name="name"
+                           placeholder="Иван Иванов" autocomplete="name">
+
+                    <!-- Поле 2: Email -->
+                    <label for="f-email">Email *</label>
+                    <input type="email" id="f-email" name="email"
+                           placeholder="ivan@example.com" autocomplete="email">
+
+                    <!-- Поле 3: Направление (select — выпадающий список) -->
+                    <label for="f-dest">Интересующее направление</label>
+                    <select id="f-dest" name="destination">
+                        <option value="">— выберите —</option>
+                        <option value="Мальдивы">Мальдивы</option>
+                        <option value="Япония">Япония</option>
+                        <option value="Швейцария">Швейцария</option>
+                        <option value="Бали">Бали</option>
+                        <option value="Дубай">Дубай</option>
+                        <option value="Барселона">Барселона</option>
+                        <option value="Рим">Рим</option>
+                        <option value="Другое">Другое направление</option>
+                    </select>
+
+                    <!-- Поле 4: Телефон (тип tel) -->
+                    <label for="f-phone">Телефон *</label>
+                    <input type="tel" id="f-phone" name="phone"
+                           placeholder="+373 60 000 000" autocomplete="tel">
+
+                    <!-- Поле 5: Сообщение (textarea) -->
+                    <label for="f-msg">Ваш вопрос или пожелания *</label>
+                    <textarea id="f-msg" name="message" rows="5"
+                              placeholder="Напишите ваш вопрос или пожелания по туру..."></textarea>
+
+                    <!-- Кнопка отправки — JS валидирует, затем форма отправляется через FormSubmit -->
+                    <button type="submit" id="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Отправить запрос
+                    </button>
+                </form>
+
+            </div>
+            <!-- конец contact-row -->
+
+            <!-- ===== ВСТРОЕННАЯ КАРТА GOOGLE MAPS ===== -->
+            <iframe class="harta"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91196.78!2d28.8638!3d47.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3628b769a1%3A0x37d1d6305749dd9!2sChișinău%2C%20Moldova!5e0!3m2!1sru!2s!4v1"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Карта расположения офиса SkyWay в Кишинёве">
+            </iframe>
+
+            <!-- Информационный блок со ссылками -->
+            <div class="info-block" style="margin-top:28px;">
+                <h2>Проверка и ресурсы</h2>
+                <ul class="info-list">
+                    <!-- Внешняя ссылка на W3C валидатор -->
+                    <li>
+                        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">
+                            Проверить HTML в W3C Validator
+                        </a>
+                    </li>
+                    <!-- Внешняя ссылка на CSS валидатор -->
+                    <li>
+                        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer">
+                            Проверить CSS в W3C CSS Validator
+                        </a>
+                    </li>
+                    <!-- Внешняя ссылка на библиотеку иконок -->
+                    <li>
+                        <a href="https://iconify.design/" target="_blank" rel="noopener noreferrer">
+                            Iconify — библиотека иконок
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Якорная ссылка наверх страницы -->
+            <a href="#" style="color:var(--navy); font-weight:600; display:block; margin-top:20px;">
+                ↑ Вернуться к началу
+            </a>
+
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <span>© SkyWay Travel — <span id="footer-year">2026</span></span>
+        &nbsp;|&nbsp;
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a>
+    </footer>
+
+    <!-- Кнопка «Наверх» — управляется JS через scroll событие -->
+    <div id="back-top" title="Наверх">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+</body>
+</html>
