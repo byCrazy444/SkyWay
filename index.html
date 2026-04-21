@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Главная страница сайта SkyWay Travel -->
+<html lang="ru">
+<head>
+    <!-- Кодировка документа -->
+    <meta charset="UTF-8">
+    <!-- Метатег для адаптивности на мобильных устройствах -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Описание для поисковых систем -->
+    <meta name="description" content="SkyWay Travel — туристическое агентство. Более 50 направлений по всему миру.">
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Подключение иконок Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Подключение Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <!-- Подключение основного скрипта (defer — после загрузки DOM) -->
+    <script src="js/script.js" defer></script>
+    <title>SkyWay — Туристическое агентство</title>
+</head>
+<body>
+
+    <!-- Шапка сайта с фиксированной навигацией -->
+    <header>
+        <!-- Логотип -->
+        <a class="logo" href="index.html">✈ SkyWay</a>
+        <!-- Навигационное меню -->
+        <nav>
+            <a href="index.html" class="active">Главная</a>
+            <a href="pages/about.html">О нас</a>
+            <a href="pages/destinations.html">Направления</a>
+            <a href="pages/tours.html">Туры</a>
+            <a href="pages/contacts.html">Контакты</a>
+        </nav>
+        <!-- Кнопка мобильного меню — JS переключает класс open у nav -->
+        <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars" aria-label="Меню"></i>
+    </header>
+
+    <main>
+        <!-- ===== HERO — БАННЕР ===== -->
+        <section id="hero">
+            <div class="hero-inner">
+                <h1>SkyWay Travel</h1>
+                <p class="hero-tagline">Ваш путь к незабываемым приключениям</p>
+                <!-- Кнопки-ссылки: внутренняя навигация -->
+                <div class="hero-btns">
+                    <a href="pages/destinations.html" class="btn-primary">Смотреть направления</a>
+                    <!-- Якорная ссылка — прокрутка к секции статистики -->
+                    <a href="#stats" class="btn-outline">О компании</a>
+                </div>
+                <!-- Дополнительные внутренние и внешние ссылки -->
+                <div class="quick-links">
+                    <a href="pages/tours.html">Актуальные туры</a>
+                    <a href="pages/contacts.html">Связаться с нами</a>
+                    <!-- Внешняя ссылка — открывается в новой вкладке -->
+                    <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer">TripAdvisor</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СТАТИСТИКА С АНИМИРОВАННЫМИ СЧЁТЧИКАМИ ===== -->
+        <!-- JS-функция animateCounter() динамически обновляет цифры -->
+        <section id="stats">
+            <h2 class="centered">SkyWay в цифрах</h2>
+            <p class="centered" style="text-indent:0; color:#555;">Мы работаем с 2014 года и знаем, как создать идеальный отдых</p>
+            <div class="stats-row">
+                <!-- data-count — целевое значение для JS-счётчика -->
+                <div class="stat-item">
+                    <div class="stat-num" data-count="5000">0</div>
+                    <p class="stat-label">Довольных клиентов</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" data-count="50">0</div>
+                    <p class="stat-label">Направлений</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" data-count="10">0</div>
+                    <p class="stat-label">Лет опыта</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num" data-count="200">0</div>
+                    <p class="stat-label">Туров в год</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+        <section id="features">
+            <h2 class="centered">Почему выбирают нас</h2>
+            <div class="features-grid">
+                <!-- Каждый .feature-item получает класс visible через JS IntersectionObserver -->
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Надёжность</h3>
+                    <p>Более 10 лет на рынке туризма Молдовы. Лицензированное агентство.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✈️</div>
+                    <h3>50+ направлений</h3>
+                    <p>От пляжей Мальдив до заснеженных Альп — мы организуем любой тур.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍👩‍👧</div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Составляем маршруты под ваши пожелания, бюджет и даты.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📞</div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Наши менеджеры на связи круглосуточно во время вашей поездки.</p>
+                </div>
+            </div>
+
+            <!-- Внутренняя ссылка — якорь к блоку полезных ссылок -->
+            <p style="margin-top:30px; text-indent:0;">
+                Хотите узнать больше?
+                <a href="#useful-links" style="color:var(--navy); font-weight:600;">Перейти к полезным ссылкам ↓</a>
+            </p>
+        </section>
+
+        <!-- ===== ПОЛЕЗНЫЕ ССЫЛКИ ===== -->
+        <section id="useful-links">
+            <h2 class="centered">Полезные ссылки</h2>
+            <p>Здесь собраны ссылки для вашего удобства: внутренняя навигация, внешние ресурсы и возврат наверх.</p>
+
+            <div class="info-block">
+                <h2>Ресурсы</h2>
+                <ul class="info-list">
+                    <!-- Внутренние ссылки -->
+                    <li><a href="pages/about.html" style="color:var(--navy);">О компании SkyWay</a></li>
+                    <li><a href="pages/tours.html" style="color:var(--navy);">Актуальные туры</a></li>
+                    <li><a href="pages/contacts.html" style="color:var(--navy);">Связаться с нами</a></li>
+                    <!-- Внешние ссылки -->
+                    <li><a href="https://www.google.com/travel/" target="_blank" rel="noopener noreferrer">Google Путешествия (внешний ресурс)</a></li>
+                    <li><a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">Booking.com — отели</a></li>
+                    <!-- Якорная ссылка: прокрутка наверх страницы -->
+                    <li><a href="#hero">↑ Вернуться к началу страницы</a></li>
+                </ul>
+
+                <!-- Иконка через библиотеку Iconify (внешний скрипт) -->
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <!-- id="footer-year" — JS динамически вставляет текущий год -->
+        <span>© SkyWay Travel — <span id="footer-year">2026</span></span>
+        &nbsp;|&nbsp;
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">W3C Validator</a>
+    </footer>
+
+    <!-- Кнопка «Наверх» — JS управляет видимостью через opacity -->
+    <div id="back-top" title="Наверх">
+        <i class="fa-solid fa-chevron-up"></i>
+    </div>
+
+</body>
+</html>
